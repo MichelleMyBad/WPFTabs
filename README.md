@@ -1,2 +1,2 @@
 # WPFTabs
-Esercizio WPF con 5 esercizi diversi (Bubble, Collatz, Telefono, Acronimo, Isogramma)
+Esercizio WPF in C# da 5  tab diverse (Bubble, Collatz, Telefono, Acronimo, Isogramma)
