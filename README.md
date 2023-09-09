@@ -47,7 +47,7 @@ Dopo aver creato la prima griglia, il prossimo componente da creare sarà il foo
     </StackPanel>
 </Grid>
 ```
-Anche per il footer stesso sarà nececssario creare una grigla, di modo da poter posizionare data e ora in basso a destra. Per fare ciò definiamo una singola riga e ben 4 colonne, per poi posizionare uno <b><i><StackPanel></i></b> nella quarta colonna (<b><i>Grid.Column="3"</i></b>), ci assicuriamo di allineare a dovere il contenuto che andrà inserito nel nostro <b><i><StackPanel></i></b> tramite <b><i>VerticalAlignment="Center"</i></b> e <b><i>HorizontalAlignment="Center"</i></b>. Successivamente inseriamo all'interno dello <b><i><StackPanel></i></b> 2 <b><i><TextBlock></i></b> all'interno dei quali andremo ad inserire data e ora, che verranno gestiti e calcolati tramite c# all'interno del nostro file <b>MainWindow.xaml.cs</b>, proprio per questo motivo è necessario assegnare un nome ad entrambi i <b><i><TextBlock></i></b> usando <b><i>x:Name="nomeComponente"</i></b>, di modo da poter essere richiamati e modificati tramite c#. Per concludere assegnamo un testo di default ad tramite <b><i>Text="testoDiDefault"</i></b>.
+Anche per il footer stesso sarà nececssario creare una griglia, di modo da poter posizionare data e ora in basso a destra. Per fare ciò definiamo una singola riga e ben 4 colonne, per poi posizionare uno <b><i><StackPanel></i></b> nella quarta colonna (<b><i>Grid.Column="3"</i></b>), ci assicuriamo di allineare a dovere il contenuto che andrà inserito nel nostro <b><i><StackPanel></i></b> tramite <b><i>VerticalAlignment="Center"</i></b> e <b><i>HorizontalAlignment="Center"</i></b>. Successivamente inseriamo all'interno dello <b><i><StackPanel></i></b> 2 <b><i><TextBlock></i></b> all'interno dei quali andremo ad inserire data e ora, che verranno gestiti e calcolati tramite c# all'interno del nostro file <b>MainWindow.xaml.cs</b>, proprio per questo motivo è necessario assegnare un nome ad entrambi i <b><i><TextBlock></i></b> usando <b><i>x:Name="nomeComponente"</i></b>, di modo da poter essere richiamati e modificati tramite c#. Per concludere assegnamo un testo di default ad tramite <b><i>Text="testoDiDefault"</i></b>.
 </details>
 
 <details>
@@ -64,11 +64,12 @@ Partiamo col definire un oggetto di classe <b><i>Timer</i></b> all'interno di <b
 ```c#
 public MainWindow()
 {
+        InitializeComponent();
         _timer = new Timer(Stufa, null, 0, 1000);
 }
 ```
 
-Proseguiamo con l'assegnazione di <b><i>_timer</i></b> all'interno di <b><i>MainWindow()</i></b>, definendo dei parametri ovvero <b><i>Stufa</i></b>: la funzione che verrà chiamata, <b><i>null</i></b>: parametro che verrà passato alla funzione, <b><i>0</i></b>: tempo (in millisecondi) aspettato prima del primo scatto (prima volta che aggiornerà i suoi valori) e infine <b><i>1000</i></b>: tempo (in millisecondi) aspettato prima del prossimo scatto (prossima volta che aggiornerà i suoi valori), in questo modo ogni secondo il timer verrà aggiornato, in caso non si desideri mostrare anche i secondi, basterà cambiare il valore in <b><i>60000</i></b> (millisecondi in un minuto).
+Proseguiamo con l'inizializzazione di <b><i>_timer</i></b> all'interno di <b><i>MainWindow()</i></b>, definendo dei parametri ovvero <b><i>Stufa</i></b>: la funzione che verrà chiamata, <b><i>null</i></b>: parametro che verrà passato alla funzione, <b><i>0</i></b>: tempo (in millisecondi) aspettato prima del primo scatto (prima volta che aggiornerà i suoi valori) e infine <b><i>1000</i></b>: tempo (in millisecondi) aspettato prima del prossimo scatto (prossima volta che aggiornerà i suoi valori), in questo modo ogni secondo il timer verrà aggiornato, in caso non si desideri mostrare anche i secondi, basterà cambiare il valore in <b><i>60000</i></b> (millisecondi in un minuto).
 
 ```c#
 private void Stufa(object state)
@@ -179,11 +180,99 @@ Nella terza riga ci occuperemo semplicemente di inserire due <b><i><RichTextBox>
 
 Per finire nell'ultima riga inseriamo le due <b><i><ListView></i></b> all'interno delle quali andremo a mostrare a schermo i nostri vettori (generato e ordinato). Bisognerà inoltre dargli dei nomi, di modo da poterle andare a modificare tramite c#.
 </details>
-<br>
-</details>
 
 <details>
 <summary>c#</summary>
+
+```c#
+public partial class MainWindow : Window
+{
+        int[] unsortedStatic = new int[] { 2, 1, 3, 8, 7, 5, 6, 4, 100, 150, 1, 2, 10 };
+        int[] unsorted = new int[] { 2, 1, 3, 8, 7, 5, 6, 4, 100, 150, 1, 2, 10 };
+        Thread thread1;
+        Thread thread2;
+```
+
+Per prima cosa creiamo all'interno di <b><i>MainWindow : Window</i></b> due liste, rispettivamente una che resterà nella lista di numeri creati e una che verrà poi riordinata, che saranno già riempite di modo da mostrare all'utente un esempio all'apertura dell'applicazione. Creiamo poi due <b><i>Thread</i></b> che si occuperanno rispettivamente di gestire lo smistamento (bubble sort) e la generazione del vettore.
+
+```c#
+public MainWindow()
+{
+    InitializeComponent();
+    thread1 = new Thread(Sort);
+    thread1.Start();
+    LstUnsorted.ItemsSource = unsortedStatic;
+}
+```
+Successivamente avviamo la funzione <b><i>Sort</i></b> nel <b><i>thread1</i></b> e assegniamo alla lista che rimarrà disordinata l'apposito array di numeri.
+
+```c#
+public void Sort()
+{
+    Dispatcher.Invoke(() =>
+    {
+        LstSorted.ItemsSource = unsorted;
+    });
+    int tmp;
+    for (int lunghezza = unsorted.Length; lunghezza > 1; lunghezza--)
+    {
+        for (int i = 0; i < lunghezza - 1; i++)
+        {
+            if (unsorted[i] > unsorted[i + 1])
+            {
+                tmp = unsorted[i];
+                unsorted[i] = unsorted[i + 1];
+                unsorted[i + 1] = tmp;
+            }
+            Dispatcher.Invoke(() =>
+            {
+                LstSorted.Items.Refresh();
+            });
+            Thread.Sleep(100);
+        }
+    }
+}
+```
+Nella nostra fuinzione <b><i>Sort</i></b> inziamo subito con l'aggiornare la lista da riordinare col vettore apposito, utilizziamo poi un semplice bubble sort per occuparci del riordinamento e, al termine di ogni ciclo del bubble sort, aggiorniamo l'interfaccia grafica tramite <b><i>Dispatcher.Invoke</i></b>, di modo da mostrare all'utente il riordinamento in modo progressivo.
+
+
+```c#
+private void Button_Click_2(object sender, RoutedEventArgs e)
+{
+    if (thread1.ThreadState == ThreadState.Stopped)
+    {
+        if (thread2 == null || thread2.ThreadState == ThreadState.Stopped)
+        {
+            thread2 = new Thread(Generate);
+            thread2.Start();
+        }
+
+    }
+}
+```
+Proseguiamo con l'iniziare la generazione e il riordinamento di un nuovo vettore al click del pulsante, per prima controlliamo che entrambi i <b><i>Thread</i></b> si siano conclusi o, in caso del <b><i>thread2</i></b>, inizializzati. In caso si verifichino le due condizioni, inizializiamo il <b><i>thread2</i></b> di modo che esegua la funzione <b><i>Generate</i></b>.
+
+```c#
+public void Generate()
+{
+    var random = new Random();
+    for (int x = 0; x < unsorted.Length; x++)
+    {
+        unsortedStatic[x] = random.Next(1, 101);
+        unsorted[x] = unsortedStatic[x];
+        Dispatcher.Invoke(() =>
+        {
+            LstUnsorted.Items.Refresh();
+            LstSorted.Items.Refresh();
+        });
+        Thread.Sleep(100);
+    }
+    thread1 = new Thread(Sort);
+    thread1.Start();
+}
+```
+
+La funzione <b><i>Generate</i></b>, tramite ciclo <i>for</i>, si occuperà di aggiornare le liste con una nuova sequenza di numeri casuali (da 1 a 100). Ad ogni passo del ciclo <i>for</i> andremo a fare refresh delle <b><i><ListView></i></b> tramite <b><i>Dispatcher.Invoke</i></b>, di modo da mostrare all'utente il progredire della rigenerazione dei numeri casuali. Infine avviamo nuovamente nel <b><i>thread1</i></b> la funzione <b><i>Sort</i></b>.
         
 </details>
 <br>
