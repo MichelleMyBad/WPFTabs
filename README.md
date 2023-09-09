@@ -92,17 +92,41 @@ Per prima cosa sarà necessario crearae un <b><i><TabControl></i></b> per poter 
 <TabControl Grid.Row="0">
         <TabItem></TabItem>
         <TabItem></TabItem>
-        <!--ecc.-->
+        <TabItem></TabItem>
+        <TabItem></TabItem>
+        <TabItem></TabItem>
 </TabControl>
 ```
 
 
 <details>
 <summary>Bubble (sort)</summary>
-Generato un vettore randomico con numeri che vanno da 1 a 100, il programma sarà in grado di riordinarlo tramite bubble sort
+Questa tab si occuperà di generare un vettore randomico con numeri che vanno da 1 a 100, per poi riordinarlo tramite bubble sort.
         
 <details>
 <summary>xaml</summary>
+
+```xaml
+<TabItem Header="Bubble">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="20"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+```
+
+Per prima cosa diamo un nome che verrà mostrato all'utente al nostro <b><i><TabItem></i></b> tramite l'attributo <b><i>Header</i></b>, successivamente creaiamo un griglia apposita per la tab, disponendola di 4 righe e 2 colonne. Le righe serviranno per disporre al loro interno : descrizione, pulsante, tipo di sequenza sottostante (generata o ordinata) e la sequenza stessa, proprio come rappresentato qui sotto.
+<img src="https://github.com/MichelleMyBad/WPFTabs/assets/127590227/9182aba5-d81f-42d0-8d66-685d4e2b404b">
+
+
 </details>
 
 <details>
