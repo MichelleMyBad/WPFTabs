@@ -152,7 +152,7 @@ Proseguendo nella seconda riga, troveremo il nostro pulsante incaricato del rior
         andare nelle <b>Properties</b> e accedere alla sezione <b>Event Handler</b> cliccando dove mostrato in immagine :
         <img src="https://github.com/MichelleMyBad/WPFTabs/assets/127590227/aec673f7-3416-4124-9897-c9a0b581f051"> <br>
         Fare poi doppio click nello spazio a fianco a <b>Click</b> e verrà generato automaticamente l'attributo <b><i>Click="NomeFunzione"</i></b> al bottone e una funzione omonima all'interno del file <b>MainWindow.xaml.cs</b>
-        <img src="https://github.com/MichelleMyBad/WPFTabs/assets/127590227/3657050e-0cb0-4227-8536-34f2a7ef7933)">   
+        <img src="https://github.com/MichelleMyBad/WPFTabs/assets/127590227/3657050e-0cb0-4227-8536-34f2a7ef7933)"> <br>   
 </details>
 
 ```xaml
