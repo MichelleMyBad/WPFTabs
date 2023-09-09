@@ -9,6 +9,7 @@ Per prima cosa bisognerà cerare una griglia che andrà a contenere tab e footer
 
 <details>
 <summary>xaml</summary>
+        
 ```xaml
 <Grid>
         <Grid.RowDefinitions>
