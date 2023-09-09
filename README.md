@@ -128,6 +128,7 @@ Questa tab si occuperà di generare un vettore randomico con numeri che vanno da
 
 Per prima cosa diamo un nome che verrà mostrato all'utente al nostro <b><i><TabItem></i></b> tramite l'attributo <b><i>Header</i></b>, successivamente creaiamo un griglia apposita per la tab, disponendola di 4 righe e 2 colonne ridimensionate in base ai loro scopi. Le righe serviranno per disporre al loro interno : descrizione, pulsante in grado di rigenerare un vettore e riordinarlo, tipo di sequenza sottostante (generata o ordinata) e la sequenza stessa. Le colonne saranno invece utili a tenere separate questi due vettori, ecco la rappresentazione qui sotto.
 <img src="https://github.com/MichelleMyBad/WPFTabs/assets/127590227/9182aba5-d81f-42d0-8d66-685d4e2b404b">
+<br><br>
 
 ```xaml
 <RichTextBox Grid.Row="0" IsReadOnly="True" Grid.ColumnSpan="2">
@@ -140,6 +141,7 @@ Per prima cosa diamo un nome che verrà mostrato all'utente al nostro <b><i><Tab
 ```
 
 Proseguiamo con l'inserire all'interno della prima riga una breve descrizione di ciò di cui si occuperà questa tab: creaiamo una <b><i><RichTextBox></i></b> ed aggiungiamo <b><i>Grid.ColumnSpan="2"</i></b> come attributo di modo che si espanda per entrambe le nostre colonne, un altro attributo necessario sarà <b><i>IsReadOnly="True"</i></b> il quale servirà ad impedire all'utente di modificare il testo. Al suo interno inseriamo un <b><i>FlowDocument</i></b> che ci permetterà di inserire al suo interno un <b><i><Pararaph></i></b> dove inserire il nostro testo. 
+<br><br>
 
 ```xaml
 <Button  Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" 
@@ -157,6 +159,7 @@ Proseguendo nella seconda riga, troveremo il nostro pulsante incaricato del rior
         Fare poi doppio click nello spazio a fianco a <b>Click</b> e verrà generato automaticamente l'attributo <b><i>Click="NomeFunzione"</i></b> al bottone e una funzione omonima all'interno del file <b>MainWindow.xaml.cs</b><br> 
         <img src="https://github.com/MichelleMyBad/WPFTabs/assets/127590227/3657050e-0cb0-4227-8536-34f2a7ef7933)">   
 </details>
+<br>
 
 ```xaml
 <RichTextBox Grid.Row="2" Grid.Column="0" IsReadOnly="True" Height="100">
@@ -173,7 +176,7 @@ Proseguendo nella seconda riga, troveremo il nostro pulsante incaricato del rior
 ```
 
 Nella terza riga ci occuperemo semplicemente di inserire due <b><i><RichTextBox></i></b> dove poter scrivere <i>"Sequenza generata"</i> e <i>"Sequenza riordinata"</i>, di modo da poterle differenziare più facilmente.
-
+<br><br>
 
 ```xaml
 <ListView Grid.Row="3" Grid.Column="0" x:Name="LstUnsorted"></ListView>
@@ -196,6 +199,7 @@ public partial class MainWindow : Window
 ```
 
 Per prima cosa creiamo all'interno di <b><i>MainWindow : Window</i></b> due liste, rispettivamente una che resterà nella lista di numeri creati e una che verrà poi riordinata, che saranno già riempite di modo da mostrare all'utente un esempio all'apertura dell'applicazione. Creiamo poi due <b><i>Thread</i></b> che si occuperanno rispettivamente di gestire lo smistamento (bubble sort) e la generazione del vettore.
+<br><br>
 
 ```c#
 public MainWindow()
@@ -206,7 +210,9 @@ public MainWindow()
     LstUnsorted.ItemsSource = unsortedStatic;
 }
 ```
+
 Successivamente avviamo la funzione <b><i>Sort</i></b> nel <b><i>thread1</i></b> e assegniamo alla lista che rimarrà disordinata l'apposito array di numeri.
+<br><br>
 
 ```c#
 public void Sort()
@@ -236,7 +242,7 @@ public void Sort()
 }
 ```
 Nella nostra fuinzione <b><i>Sort</i></b> inziamo subito con l'aggiornare la lista da riordinare col vettore apposito, utilizziamo poi un semplice bubble sort per occuparci del riordinamento e, al termine di ogni ciclo del bubble sort, aggiorniamo l'interfaccia grafica tramite <b><i>Dispatcher.Invoke</i></b>, di modo da mostrare all'utente il riordinamento in modo progressivo.
-
+<br><br>
 
 ```c#
 private void Button_Click_2(object sender, RoutedEventArgs e)
@@ -253,6 +259,7 @@ private void Button_Click_2(object sender, RoutedEventArgs e)
 }
 ```
 Proseguiamo con l'iniziare la generazione e il riordinamento di un nuovo vettore al click del pulsante, per prima controlliamo che entrambi i <b><i>Thread</i></b> si siano conclusi o, in caso del <b><i>thread2</i></b>, inizializzati. In caso si verifichino le due condizioni, inizializiamo il <b><i>thread2</i></b> di modo che esegua la funzione <b><i>Generate</i></b>.
+<br><br>
 
 ```c#
 public void Generate()
