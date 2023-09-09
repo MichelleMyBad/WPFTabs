@@ -6,7 +6,6 @@
 
 ## Griglia
 Per prima cosa bisognerà cerare una griglia che andrà a contenere tab e footer, di modo da non dover creare un footer identico per ogni tab e poter riutilizzare sempre lo stesso sempliccemente posizionandolo in basso.
-
 <details>
 <summary>xaml</summary>
         
