@@ -123,10 +123,61 @@ Questa tab si occuperà di generare un vettore randomico con numeri che vanno da
         </Grid.ColumnDefinitions>
 ```
 
-Per prima cosa diamo un nome che verrà mostrato all'utente al nostro <b><i><TabItem></i></b> tramite l'attributo <b><i>Header</i></b>, successivamente creaiamo un griglia apposita per la tab, disponendola di 4 righe e 2 colonne. Le righe serviranno per disporre al loro interno : descrizione, pulsante, tipo di sequenza sottostante (generata o ordinata) e la sequenza stessa, proprio come rappresentato qui sotto.
+Per prima cosa diamo un nome che verrà mostrato all'utente al nostro <b><i><TabItem></i></b> tramite l'attributo <b><i>Header</i></b>, successivamente creaiamo un griglia apposita per la tab, disponendola di 4 righe e 2 colonne ridimensionate in base ai loro scopi. Le righe serviranno per disporre al loro interno : descrizione, pulsante in grado di rigenerare un vettore e riordinarlo, tipo di sequenza sottostante (generata o ordinata) e la sequenza stessa. Le colonne saranno invece utili a tenere separate questi due vettori, ecco la rappresentazione qui sotto.
 <img src="https://github.com/MichelleMyBad/WPFTabs/assets/127590227/9182aba5-d81f-42d0-8d66-685d4e2b404b">
 
+```xaml
+<RichTextBox Grid.Row="0" IsReadOnly="True" Grid.ColumnSpan="2">
+    <FlowDocument>
+        <Paragraph>
+            Generato un vettore randomico con numeri che vanno da 1 a 100, il programma sarà in grado di riordinarlo tramite bubble sort
+        </Paragraph>
+    </FlowDocument>
+</RichTextBox>
+```
 
+Proseguiamo con l'inserire all'interno della prima riga una breve descrizione di ciò di cui si occuperà questa tab: creaiamo una <b><i><RichTextBox></i></b> ed aggiungiamo <b><i>Grid.ColumnSpan="2"</i></b> come attributo di modo che si espanda per entrambe le nostre colonne, un altro attributo necessario sarà <b><i>IsReadOnly="True"</i></b> il quale servirà ad impedire all'utente di modificare il testo. Al suo interno inseriamo un <b><i>FlowDocument</i></b> che ci permetterà di inserire al suo interno un <b><i><Pararaph></i></b> dove inserire il nostro testo. 
+
+```xaml
+<Button  Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" 
+            Click="Button_Click_2">Rigenera vettore</Button>
+```
+
+Proseguendo nella seconda riga, troveremo il nostro pulsante incaricato del riordinamento e generazione dei vettori, ci basterà posizionarlo nella giusta posizione ed associargli una funzione che verrà chiamata al click, ecco qui sotto un metodo veloce per poterlo fare.
+
+<details>
+        <summary>Creazione della funzione chiamata al click</summary>
+        Per creare una funzione associata al click del pulsante senza in modo semplice e veloce basterà fare doppio click su <b><i>Button</i></b> in questo modo, 
+        <img src="https://github.com/MichelleMyBad/WPFTabs/assets/127590227/8aaeef93-0382-4fdf-8eb0-98cd891cf58d">
+        andare nelle <b>Properties</b> e accedere alla sezione <b>Event Handler</b> cliccando dove mostrato in immagine :
+        <img src="https://github.com/MichelleMyBad/WPFTabs/assets/127590227/aec673f7-3416-4124-9897-c9a0b581f051">
+        Fare poi doppio click nello spazio a fianco a <b>Click</b> e verrà generato automaticamente l'attributo <b><i>Click="NomeFunzione"</i></b> al bottone e una funzione omonima all'interno del file <b>MainWindow.xaml.cs</b>
+        <img src="https://github.com/MichelleMyBad/WPFTabs/assets/127590227/3657050e-0cb0-4227-8536-34f2a7ef7933)">   
+</details>
+
+```xaml
+<RichTextBox Grid.Row="2" Grid.Column="0" IsReadOnly="True" Height="100">
+<FlowDocument>
+    <Paragraph>Sequenza generata</Paragraph>
+</FlowDocument>
+</RichTextBox>
+
+<RichTextBox Grid.Row="2" Grid.Column="1" IsReadOnly="True" Height="100">
+<FlowDocument>
+    <Paragraph>Sequenza riordinata</Paragraph>
+</FlowDocument>
+</RichTextBox>
+```
+
+Nella terza riga ci occuperemo semplicemente di inserire due <b><i><RichTextBox></i></b> dove poter scrivere <i>"Sequenza generata"</i> e <i>"Sequenza riordinata"</i>, di modo da poterle differenziare più facilmente.
+
+
+```xaml
+<ListView Grid.Row="3" Grid.Column="0" x:Name="LstUnsorted"></ListView>
+<ListView Grid.Row="3" Grid.Column="1" x:Name="LstSorted"></ListView>
+```
+
+Per finire nell'ultima riga inseriamo le due <b><i><ListView></i></b> all'interno delle quali andremo a mostrare a schermo i nostri vettori (generato e ordinato). Bisognerà inoltre dargli dei nomi, di modo da poterle andare a modificare tramite c#.
 </details>
 
 <details>
