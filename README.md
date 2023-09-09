@@ -97,10 +97,10 @@ L'ultima cosa che rimane da fare è definire la nostra funzione <b><i>Stufa()</i
 <details>
 <summary>c#</summary>
 </details>
-
+<br>
+<br>
 </details>
-<br>
-<br>
+
 
 <details>
 <summary>Collatz</summary>
@@ -112,10 +112,10 @@ L'ultima cosa che rimane da fare è definire la nostra funzione <b><i>Stufa()</i
 <details>
 <summary>c#</summary>
 </details>
-
+<br>
+<br>
 </details>
-<br>
-<br>
+
 
 <details>
 <summary>Telefono</summary>
@@ -127,10 +127,10 @@ L'ultima cosa che rimane da fare è definire la nostra funzione <b><i>Stufa()</i
 <details>
 <summary>c#</summary>
 </details>
-
+<br>
+<br>
 </details>
-<br>
-<br>
+
 
 <details>
 <summary>Acronimo</summary>
@@ -142,10 +142,10 @@ L'ultima cosa che rimane da fare è definire la nostra funzione <b><i>Stufa()</i
 <details>
 <summary>c#</summary>
 </details>
-
+<br>
+<br>
 </details>
-<br>
-<br>
+
 
 <details>
 <summary>Isogramma</summary>
