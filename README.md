@@ -179,9 +179,12 @@ Nella terza riga ci occuperemo semplicemente di inserire due <b><i><RichTextBox>
 
 Per finire nell'ultima riga inseriamo le due <b><i><ListView></i></b> all'interno delle quali andremo a mostrare a schermo i nostri vettori (generato e ordinato). Bisognerà inoltre dargli dei nomi, di modo da poterle andare a modificare tramite c#.
 </details>
+<br>
+</details>
 
 <details>
 <summary>c#</summary>
+        
 </details>
 <br>
 </details>
