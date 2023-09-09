@@ -98,7 +98,6 @@ L'ultima cosa che rimane da fare è definire la nostra funzione <b><i>Stufa()</i
 <summary>c#</summary>
 </details>
 <br>
-<br>
 </details>
 
 
@@ -112,7 +111,6 @@ L'ultima cosa che rimane da fare è definire la nostra funzione <b><i>Stufa()</i
 <details>
 <summary>c#</summary>
 </details>
-<br>
 <br>
 </details>
 
@@ -128,7 +126,6 @@ L'ultima cosa che rimane da fare è definire la nostra funzione <b><i>Stufa()</i
 <summary>c#</summary>
 </details>
 <br>
-<br>
 </details>
 
 
@@ -142,7 +139,6 @@ L'ultima cosa che rimane da fare è definire la nostra funzione <b><i>Stufa()</i
 <details>
 <summary>c#</summary>
 </details>
-<br>
 <br>
 </details>
 
