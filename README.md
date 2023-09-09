@@ -5,9 +5,10 @@
 
 <details>
 <summary>
-##Griglia
+## Griglia
 Per prima cosa bisognerà cerare una griglia che andrà a contenere tab e footer, di modo da non dover creare un footer identico per ogni tab e poter riutilizzare lo stess, sempliccemente posizionandolo in basso
 </summary>
+        
 ```xaml
 <Grid>
         <Grid.RowDefinitions>
