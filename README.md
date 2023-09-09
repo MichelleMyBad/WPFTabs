@@ -86,10 +86,21 @@ L'ultima cosa che rimane da fare è definire la nostra funzione <b><i>Stufa()</i
 </details>
 
 ## Tab
+Per prima cosa sarà necessario crearae un <b><i><TabControl></i></b> per poter contenere le diverse tab e posizionarlo nella prima righa della griglia contenente tutta l'applicazone, il quale verrà chiuso dopo aver inserito al suo interno tutti i diversi <b><i><TabItem></i></b>.
+
+```xaml
+<TabControl Grid.Row="0">
+        <TabItem></TabItem>
+        <TabItem></TabItem>
+        ...
+</TabControl>
+```
+
 
 <details>
 <summary>Bubble (sort)</summary>
-
+Generato un vettore randomico con numeri che vanno da 1 a 100, il programma sarà in grado di riordinarlo tramite bubble sort
+        
 <details>
 <summary>xaml</summary>
 </details>
