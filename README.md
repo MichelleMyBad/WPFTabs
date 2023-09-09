@@ -148,9 +148,9 @@ Proseguendo nella seconda riga, troveremo il nostro pulsante incaricato del rior
 <details>
         <summary>Creazione della funzione chiamata al click</summary>
         Per creare una funzione associata al click del pulsante senza in modo semplice e veloce basterà fare doppio click su <b><i>Button</i></b> in questo modo, 
-        <img src="https://github.com/MichelleMyBad/WPFTabs/assets/127590227/8aaeef93-0382-4fdf-8eb0-98cd891cf58d">
+        <img src="https://github.com/MichelleMyBad/WPFTabs/assets/127590227/8aaeef93-0382-4fdf-8eb0-98cd891cf58d"> <br>
         andare nelle <b>Properties</b> e accedere alla sezione <b>Event Handler</b> cliccando dove mostrato in immagine :
-        <img src="https://github.com/MichelleMyBad/WPFTabs/assets/127590227/aec673f7-3416-4124-9897-c9a0b581f051">
+        <img src="https://github.com/MichelleMyBad/WPFTabs/assets/127590227/aec673f7-3416-4124-9897-c9a0b581f051"> <br>
         Fare poi doppio click nello spazio a fianco a <b>Click</b> e verrà generato automaticamente l'attributo <b><i>Click="NomeFunzione"</i></b> al bottone e una funzione omonima all'interno del file <b>MainWindow.xaml.cs</b>
         <img src="https://github.com/MichelleMyBad/WPFTabs/assets/127590227/3657050e-0cb0-4227-8536-34f2a7ef7933)">   
 </details>
