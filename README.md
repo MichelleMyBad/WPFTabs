@@ -5,7 +5,7 @@
 
 <details>
 <summary>
-<h1>Griglia</h1>h1> <br>
+<h2>Griglia</h2> <br>
 Per prima cosa bisognerà cerare una griglia che andrà a contenere tab e footer, di modo da non dover creare un footer identico per ogni tab e poter riutilizzare lo stess, sempliccemente posizionandolo in basso
 </summary>
         
