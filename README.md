@@ -92,7 +92,7 @@ Per prima cosa sarà necessario crearae un <b><i><TabControl></i></b> per poter 
 <TabControl Grid.Row="0">
         <TabItem></TabItem>
         <TabItem></TabItem>
-        ...
+        <!--ecc.-->
 </TabControl>
 ```
 
