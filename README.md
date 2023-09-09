@@ -6,8 +6,6 @@
 
 ## Griglia
 Per prima cosa bisognerà cerare una griglia che andrà a contenere tab e footer, di modo da non dover creare un footer identico per ogni tab e poter riutilizzare sempre lo stesso sempliccemente posizionandolo in basso.
-<details>
-<summary>xaml</summary>
         
 ```xaml
 <Grid>
@@ -18,7 +16,6 @@ Per prima cosa bisognerà cerare una griglia che andrà a contenere tab e footer
 ```
 
 Il primo tag <b><i><</i></b><b><i>Grid</i></b><b><i>></i></b> andrà chiuso una volta sviluppata la partre grafica anche delle tab, dato che sarà la griglia che conterrà l'intera applicazione. Delle due righe all'interno di <b><i><Grid.RowDefinitions></i></b> invece, la prima andrà a contenere le diverse tab e la seconda il footer, proprio per questo essa verrà ridimensionata, di modo da non far occupare troppo spazio al nostro footer. 
-</details>
 
 
 ## Footer
@@ -87,3 +84,6 @@ private void Stufa(object state)
 
 L'ultima cosa che rimane da fare è definire la nostra funzione <b><i>Stufa()</i></b>, all'interno della nostra funzione creiamo un <b><i>Dispatcher.Invoke</i></b>, il quale ci permetterà di "bucare" il processo <b><i>Timer</i></b>, per poter apportare modifiche all'interno di quello della GUI. All'interno del <b><i>Dispatcher.Invoke</i></b> inseriamo le istruzioni da eseguire : tramite i nome precedentemente assegnati ai <b><i><TextBlock></i></b>, andiamo a modificare il loro contenuto, utilizziando <b><i>DateTime.Now</i></b> otterremo data e ora attuale, le quali verranno convertite in stringa tramite <b><i>.ToString()</i></b>, successivamente le due verranno immagazziante all'interno di un array tramite lo <b><i>Split(' ')</i></b>, inserendo poi un <b><i>[0]</i></b> o <b><i>[1]</i></b> andremo ad ottenere rispettivamente la data e l'ora attuali.
 </details>
+
+## Tab
+
