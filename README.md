@@ -60,6 +60,7 @@ public partial class MainWindow : Window
 ```
 
 Partiamo col definire un oggetto di classe <b><i>Timer</i></b> all'interno di <b><i>MainWindow : Window</i></b>, questa classe ci permetterà di aggiornare <b><i>_timer</i></b> dopo un intervallo di tempo da noi definito.
+<br>
 
 ```c#
 public MainWindow()
@@ -70,6 +71,7 @@ public MainWindow()
 ```
 
 Proseguiamo con l'inizializzazione di <b><i>_timer</i></b> all'interno di <b><i>MainWindow()</i></b>, definendo dei parametri ovvero <b><i>Stufa</i></b>: la funzione che verrà chiamata, <b><i>null</i></b>: parametro che verrà passato alla funzione, <b><i>0</i></b>: tempo (in millisecondi) aspettato prima del primo scatto (prima volta che aggiornerà i suoi valori) e infine <b><i>1000</i></b>: tempo (in millisecondi) aspettato prima del prossimo scatto (prossima volta che aggiornerà i suoi valori), in questo modo ogni secondo il timer verrà aggiornato, in caso non si desideri mostrare anche i secondi, basterà cambiare il valore in <b><i>60000</i></b> (millisecondi in un minuto).
+<br>
 
 ```c#
 private void Stufa(object state)
