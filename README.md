@@ -170,7 +170,7 @@ Proseguiamo con l'inserire all'interno della prima riga una breve descrizione di
             Click="Button_Click_2">Rigenera vettore</Button>
 ```
 
-Proseguendo nella seconda riga, troveremo il nostro pulsante incaricato del riordinamento e generazione dei vettori, ci basterà associargli una funzione che verrà chiamata al click, ecco qui sotto un metodo veloce per poterlo fare.
+Proseguendo, nella seconda riga, troveremo il nostro pulsante incaricato del riordinamento e generazione dei vettori, ci basterà associargli una funzione che verrà chiamata al click, ecco qui sotto un metodo veloce per poterlo fare.
 
 <details>
         <summary>Creazione della funzione chiamata al click</summary> 
