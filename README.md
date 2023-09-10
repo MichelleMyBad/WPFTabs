@@ -114,11 +114,11 @@ Per prima cosa sarà necessario crearae un <b><i><TabControl></i></b> per poter 
 
 ```xaml
 <TabControl Grid.Row="0">
-        <TabItem></TabItem>
-        <TabItem></TabItem>
-        <TabItem></TabItem>
-        <TabItem></TabItem>
-        <TabItem></TabItem>
+        <TabItem Header="Bubble"></TabItem>
+        <TabItem Header="Collatz"></TabItem>
+        <TabItem Header="Telefono"></TabItem>
+        <TabItem Header="Acronimo"></TabItem>
+        <TabItem Header="Isogramma"></TabItem>
 </TabControl>
 ```
 
