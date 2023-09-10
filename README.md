@@ -91,7 +91,7 @@ public MainWindow()
 }
 ```
 
-Proseguiamo con l'inizializzazione di <b><i>_timer</i></b> all'interno di <b><i>MainWindow()</i></b>, definendo dei parametri ovvero <b><i>Stufa</i></b>: la funzione che verrà chiamata, <b><i>null</i></b>: parametro che verrà passato alla funzione, <b><i>0</i></b>: tempo (in millisecondi) aspettato prima del primo scatto (prima volta che aggiornerà i suoi valori) e infine <b><i>1000</i></b>: tempo (in millisecondi) aspettato prima del prossimo scatto (prossima volta che aggiornerà i suoi valori), in questo modo ogni secondo il timer verrà aggiornato, in caso non si desideri mostrare anche i secondi, basterà cambiare il valore in <b><i>60000</i></b> (millisecondi in un minuto).
+Proseguiamo con l'inizializzazione di <b><i>_timer</i></b> all'interno di <b><i>MainWindow()</i></b> definendo dei parametri ovvero <b><i>Stufa</i></b>: la funzione che verrà chiamata, <b><i>null</i></b>: parametro che verrà passato alla funzione, <b><i>0</i></b>: tempo (in millisecondi) aspettato prima del primo scatto (prima volta che verrà chiamata la funzione) e infine <b><i>1000</i></b>: tempo (in millisecondi) aspettato prima del prossimo scatto (prossima volta chiamerà la funzione), in questo modo ogni secondo il timer verrà aggiornato.
 <br><br>
 
 ```c#
