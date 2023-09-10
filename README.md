@@ -148,7 +148,7 @@ Questa tab si occuperà di generare un vettore randomico con numeri che vanno da
         </Grid.ColumnDefinitions>
 ```
 
-Per prima cosa diamo un nome, che verrà mostrato all'utente al nostro, <b><i><TabItem></i></b> tramite l'attributo <b><i>Header</i></b>, successivamente creaiamo un griglia apposita per la tab, dandole 4 righe e 2 colonne ridimensionate in base ai loro scopi. Le righe serviranno per disporre al loro interno : descrizione, pulsante in grado di rigenerare un vettore e riordinarlo, tipo di sequenza sottostante (generata o ordinata) e la sequenza stessa. Le colonne saranno invece utili a tenere separate le due sequenza, ecco la rappresentazione gradica qui sotto.
+Per prima cosa diamo un nome, che verrà mostrato all'utente, al nostro <<b><i>TabItem</i></b>> tramite l'attributo <b><i>Header</i></b>, successivamente creaiamo un griglia apposita per la tab composta da 4 righe e 2 colonne ridimensionate in base ai loro scopi. Le righe serviranno per disporre al loro interno : descrizione, pulsante in grado di rigenerare un vettore e riordinarlo, tipo di sequenza sottostante (generata o ordinata) e la sequenza stessa. Le colonne saranno invece utili a tenere separate le due sequenza, ecco la rappresentazione grafica qui sotto.
 <img src="https://github.com/MichelleMyBad/WPFTabs/assets/127590227/9182aba5-d81f-42d0-8d66-685d4e2b404b">
 <br><br>
 
