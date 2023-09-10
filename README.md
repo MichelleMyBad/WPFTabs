@@ -162,7 +162,7 @@ Per prima cosa diamo un nome, che verrà mostrato all'utente, al nostro <<b><i>T
 </RichTextBox>
 ```
 
-Proseguiamo con l'inserire all'interno della prima riga una breve descrizione di ciò di cui si occuperà questa tab: creaiamo una <b><i><RichTextBox></i></b> ed aggiungiamo <b><i>Grid.ColumnSpan="2"</i></b> come attributo di modo che si espanda per entrambe le nostre colonne, un altro attributo necessario sarà <b><i>IsReadOnly="True"</i></b> il quale servirà ad impedire all'utente di modificare il testo. Al suo interno inseriamo un <b><i>FlowDocument</i></b> che ci permetterà di inserire al suo interno un <b><i><Pararaph></i></b> dove inserire il nostro testo. 
+Proseguiamo con l'inserire all'interno della prima riga una breve descrizione di ciò di cui si occuperà questa tab: creaiamo una <<b><i>RichTextBox</i></b>> ed aggiungiamo <b><i>Grid.ColumnSpan="2"</i></b> come attributo di modo che si espanda per entrambe le nostre colonne, un altro attributo necessario sarà <b><i>IsReadOnly="True"</i></b> il quale servirà ad impedire all'utente di modificare il testo. Al suo interno inseriamo poi un <<b><i>FlowDocument</i></b>> che ci permetterà di scrivere la nostra descrizione dentro un <<b><i>Pararaph</i></b>>. 
 <br><br>
 
 ```xaml
@@ -170,7 +170,7 @@ Proseguiamo con l'inserire all'interno della prima riga una breve descrizione di
             Click="Button_Click_2">Rigenera vettore</Button>
 ```
 
-Proseguendo nella seconda riga, troveremo il nostro pulsante incaricato del riordinamento e generazione dei vettori, ci basterà posizionarlo nella giusta posizione ed associargli una funzione che verrà chiamata al click, ecco qui sotto un metodo veloce per poterlo fare.
+Proseguendo nella seconda riga, troveremo il nostro pulsante incaricato del riordinamento e generazione dei vettori, ci basterà associargli una funzione che verrà chiamata al click, ecco qui sotto un metodo veloce per poterlo fare.
 
 <details>
         <summary>Creazione della funzione chiamata al click</summary> 
