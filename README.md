@@ -80,7 +80,7 @@ public partial class MainWindow : Window
         private Timer _timer;
 ```
 
-Partiamo col definire un oggetto di classe <b><i>Timer</i></b> all'interno di <b><i>MainWindow : Window</i></b>, questa classe ci permetterà di aggiornare <b><i>_timer</i></b> dopo un intervallo di tempo da noi definito.
+Partiamo col definire un oggetto di tipo <b><i>Timer</i></b> all'interno di <b><i>MainWindow : Window</i></b>.
 <br><br>
 
 ```c#
