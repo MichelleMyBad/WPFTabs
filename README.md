@@ -583,7 +583,7 @@ private void Button_Click_3(object sender, RoutedEventArgs e)
     }
 }
 ```
-Continuiamo poi con l'immagazzinare la stringa inserita all'interno di <b><i>numero</i></b>, per poi fornire questo dato al <<b><i>TextBlock</i></b>>, che si occupa di mostrare a schermo l'ultima stringa inserita, e a <b><i>Pulisci()</i></b>. Il riusltato dalla funzione verrà poi immagazzinato all'interno del secondo <<b><i>TextBlock</i></b>> in modo da mostrarlo a schermo. Utilizziamo nuovamente un <i>try-catch</i> per prevenire il crash dell'applicazione in caso di errori.     
+Continuiamo poi con l'immagazzinare dell'input all'interno di <b><i>numero</i></b>, per poi fornire questo dato al <<b><i>TextBlock</i></b>>, che si occupa di mostrare a schermo l'ultima stringa inserita, e a <b><i>Pulisci()</i></b>. Il riusltato dalla funzione verrà poi immagazzinato all'interno del secondo <<b><i>TextBlock</i></b>> in modo da mostrarlo a schermo. Utilizziamo nuovamente un <i>try-catch</i> per prevenire il crash dell'applicazione in caso di errori.     
 </details>
 <br>
 </details>
