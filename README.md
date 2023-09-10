@@ -23,7 +23,7 @@ Prima di tutto bisognerà regolare la grandezza desiderata per la nostra applica
         >
 ```
 
-Ciò sarà possibile andando a modificare <b><i>Height</i></b> e <b><i>Width</i></b> (in caso quelli impostaati automaticamente non ci soddisfino). Per il posizionamento dell'applicazione bastera invece modificare l'attributo <b><i>WindowStartupLocation</i></b>. In aggiunta è possibile cambiare il titolo della propria app tramite l'attributo <b><i>Title</i></b>.
+Ciò sarà possibile andando a modificare <b><i>Height</i></b> e <b><i>Width</i></b> (in caso quelli impostati automaticamente non ci soddisfino). Per il posizionamento dell'applicazione basterà invece modificare l'attributo <b><i>WindowStartupLocation</i></b>. In aggiunta sarà possibile cambiare il titolo della propria app tramite l'attributo <b><i>Title</i></b>.
 <br>
 ## Griglia
 Sarà poi necessario creare una griglia per contenere tab e footer, di modo da non dover creare un footer identico per ogni tab e poter riutilizzare sempre lo stesso sempliccemente posizionandolo in basso.
