@@ -186,6 +186,7 @@ Nella terza riga ci occuperemo semplicemente di inserire due <b><i><RichTextBox>
 ```
 
 Per finire nell'ultima riga inseriamo le due <b><i><ListView></i></b> all'interno delle quali andremo a mostrare a schermo i nostri vettori (generato e ordinato). Bisognerà inoltre dargli dei nomi, di modo da poterle andare a modificare tramite c#.
+<br>
 </details>
 
 <details>
@@ -311,7 +312,7 @@ Questa tab si occuperà di, una volta passato un numero al programma, ritornare 
 ```
 
 Come visto per la tab precedente, cominciamo col creare una griglia per questa tab e col dargli un nome visibile a schermo.
-<br>
+<br><br>
 
 ```xaml
 <RichTextBox IsReadOnly="True">
@@ -346,7 +347,7 @@ Come visto per la tab precedente, cominciamo col creare una griglia per questa t
 ```
 
 Continuiamo con una <b><i><RichTextBox></i></b> nella quale poter inserire la traccia dell'esercizio.
-<br>
+<br><br>
 
 ```xaml
          <StackPanel Grid.Row="1">
@@ -360,6 +361,7 @@ Continuiamo con una <b><i><RichTextBox></i></b> nella quale poter inserire la tr
 ```
 
 Concludiamo la parte grafica creando uno <b><i><StackPanel></i></b> nel quale poter inserire un bottone, che si occuperà di chiamare la funzione per eseguire il calcolo, un <b><i><TextBlock></i></b> per permettere all'utente di inserire il numero e due <b><i><TextBlock></i></b> per poter mostrare a schermo il risultato ottenuto.
+<br>
 </details>
 
 <details>
@@ -390,7 +392,7 @@ public int Passi(int n)
 ```
 
 Iniziamo col definire la funzione che si occuperà di eseguire il calcolo, per prima cosa dobbiamo assicurarci che il numero di maggiore di 0, per poi iniziare a seguire passo passo le istruzioni dateci dalla <a href="https://it.wikipedia.org/wiki/Congettura_di_Collatz" target="_blank">congettura di Collatz</a>, per poi fare il retunr del numero di passi eseguiti.
-<br>
+<br><br>
 
 ```c#
 private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -438,7 +440,7 @@ Questa tab si occuperà di, in caso si tratti di un numero valido, pulire la str
 ```
 
 Partiamo come al solito col creare griglia e titolo per la nostra tab.
-<br>
+<br><br>
 
 ```xaml
 <RichTextBox IsReadOnly="True" Grid.ColumnSpan="2">
@@ -481,7 +483,7 @@ Partiamo come al solito col creare griglia e titolo per la nostra tab.
 ```
 
 Continuiamo con la solita <b><i><RichTextBox></i></b> per poter inserire la descrizione di ciò che la tab andrà a svolgere.
-<br>
+<br><br>
 
 ```xaml
                 <StackPanel Grid.Row="1" Grid.ColumnSpan="2">
@@ -499,6 +501,7 @@ Continuiamo con la solita <b><i><RichTextBox></i></b> per poter inserire la desc
 ```
 
 Per poi concludere con uno <b><i><StackPanel></i></b> contenente pulsante, <b><i><TextBox></i></b> per l'input e <b><i><TextBlock></i></b> per mostrare l'ultima stringa inserita e il numero pulito all'utente.
+<br>
 </details>
 
 <details>
@@ -537,7 +540,7 @@ public string Pulisci(string phoneNumber)
 ```
 
 Per cominciare creaiamo una funzione che si in grado di ripulire il nostro numero secondo gli standard del NANP americano e che poi ritorni il numero ripulito o un errore in caso di input errato.
-<br>
+<br><br>
 
 ```c#
 private void Button_Click_3(object sender, RoutedEventArgs e)
@@ -606,7 +609,7 @@ Per poi proseguire con la solita descrizione.
 ```
 
 Concludiamo in fine con <b><i><StackPanel></i></b> contenente bottone, <b><i><TextBlock></i></b> e <b><i><TextBlock></i></b> per permettere all'utente di inserire l'input e visualizzare l'acronimo.
-
+<br>
 </details>
 
 <details>
