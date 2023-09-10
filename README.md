@@ -6,7 +6,7 @@
 
 
 ## Applicazione
-Prima di tutto bisogna regolare la grandezza desiderata per la nostra applicazione e fare in modo che, una volta avviata, si posizioni al centro dello schermo dell'utente.
+Prima di tutto bisognerà regolare la grandezza desiderata per la nostra applicazione e fare in modo che, una volta avviata, si posizioni al centro dello schermo dell'utente.
 ```xaml
 <Window x:Class="MartinezBianchi.Michelle._3i.wpf.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
