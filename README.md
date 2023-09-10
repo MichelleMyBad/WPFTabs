@@ -26,7 +26,7 @@ Prima di tutto bisogna regolare la grandezza desiderata per la nostra applicazio
 Ciò sarà possibile andando a modificare <b><i>Height</i></b> e <b><i>Width</i></b> in caso quelli impostaati automaticamente non ci soddisfino. Per il posizionamento dell'applicazione bastera invece modificare l'attributo <b><i>WindowStartupLocation</i></b>. In aggiunta è possibile cambiare il titolo della propria app tramite l'attributo <b><i>Title</i></b>.
 <br>
 ## Griglia
-Per prima cosa bisognerà cerare una griglia che andrà a contenere tab e footer, di modo da non dover creare un footer identico per ogni tab e poter riutilizzare sempre lo stesso sempliccemente posizionandolo in basso.
+Sarà necessario creare una griglia per contenere tab e footer, di modo da non dover creare un footer identico per ogni tab e poter riutilizzare sempre lo stesso sempliccemente posizionandolo in basso.
         
 ```xaml
 <Grid>
