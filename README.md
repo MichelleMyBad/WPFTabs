@@ -266,7 +266,7 @@ public void Sort()
     }
 }
 ```
-Nella fuinzione <b><i>Sort()</i></b> inzieremo subito con l'aggiornare la <<b><i>ListView</i></b>> che dovrà contenere la sequenza riordinata alla fine del riordinamento, assegnandole il vettore apposito. Utilizziamo poi un semplice bubble sort per occuparci del vettore e, al termine di ogni ciclo, aggiorniamo l'interfaccia grafica tramite <b><i>Dispatcher.Invoke</i></b>, mostrando così all'utente il riordinamento in modo progressivo.
+Nella funzione <b><i>Sort()</i></b> inzieremo subito con l'aggiornare la <<b><i>ListView</i></b>> che dovrà contenere la sequenza alla fine del riordinamento, assegnandole il vettore apposito. Utilizziamo poi un semplice bubble sort per occuparci del vettore e, al termine di ogni ciclo, aggiorniamo l'interfaccia grafica tramite <b><i>Dispatcher.Invoke</i></b>, mostrando così all'utente il riordinamento in modo progressivo.
 <br><br>
 
 ```c#
