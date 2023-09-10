@@ -106,7 +106,7 @@ private void Stufa(object state)
 }
 ```
 
-L'ultima cosa che rimane da fare è definire la nostra funzione <b><i>Stufa()</i></b>. A suo interno creiamo un <b><i>Dispatcher.Invoke</i></b>, il quale ci permetterà di "bucare" il processo <b><i>Timer</i></b> (processo corrente), per poter apportare modifiche all'interno di quello della GUI. All'interno del <b><i>Dispatcher.Invoke</i></b> inseriamo le istruzioni da eseguire : tramite i nomi precedentemente assegnati ai <<b><i>TextBlock</i></b>>, andiamo a modificare il loro contenuto, utilizziando <b><i>DateTime.Now</i></b> otterremo data e ora attuale, le quali verranno convertite in stringa tramite <b><i>.ToString()</i></b>, successivamente le due verranno immagazziante all'interno di un array grazie a <b><i>Split(' ')</i></b>, inserendo di seguito uno <b><i>[0]</i></b> o un <b><i>[1]</i></b> andremo ad ottenere rispettivamente la data e l'ora attuali.
+L'ultima cosa che rimane da fare è definire la nostra funzione <b><i>Stufa()</i></b>. Al suo interno creiamo un <b><i>Dispatcher.Invoke</i></b>, il quale ci permetterà di "bucare" il processo <b><i>Timer</i></b> (processo corrente), per poter apportare modifiche all'interno di quello della GUI. All'interno del <b><i>Dispatcher.Invoke</i></b> inseriamo le istruzioni da eseguire : tramite i nomi precedentemente assegnati ai <<b><i>TextBlock</i></b>>, andiamo a modificare il loro contenuto.
 </details>
 
 ## Tab
