@@ -694,7 +694,7 @@ Questa tab si occuperà di controllare se una parola o frase inserita è un isog
             </Grid.ColumnDefinitions>
 ```
 
-Iniziamo con il creare nuovamente un titolo per quest'ultima tab e una griglia apposita. <br>
+Iniziamo con il creare nuovamente un titolo per quest'ultima tab e una griglia apposita. <br><br>
 
 ```xaml
 <RichTextBox IsReadOnly="True" Grid.ColumnSpan="2">
@@ -739,7 +739,7 @@ Iniziamo con il creare nuovamente un titolo per quest'ultima tab e una griglia a
 </RichTextBox>
 ```
 
-Continuiamo con la <b><i><RichTextBox></i></b> per la descrizione.<br>
+Continuiamo con la <b><i><RichTextBox></i></b> per la descrizione.<br><br>
 
 
 ```xaml
@@ -753,6 +753,7 @@ Continuiamo con la <b><i><RichTextBox></i></b> per la descrizione.<br>
 ```
 
 Concludiamo in fine con uno <b><i><StackPanel></i></b> con al suo interno pulsante, <b><i><TextBox></i></b> per l'input e <b><i><TextBlock></i></b> per dire all'utente se la parola inserita è un isogramma o meno.
+<br>
 </details>
 
 <details>
@@ -777,7 +778,7 @@ public bool Verifica(string word)
 
 Andiamo a creare una funzione in grado di poter verificare se la parola o frase proposta presentino o meno lettere ripetute e che, in caso contrario, ritorni <i>true</i>, in quanto la parola o frase passata è risulterà essere un isogramma.
 N.B. Sono permesse ripetizioni di caratteri diversi da lettere.
-<br>
+<br><br>
 
 ```c#
 private void Button_Click_4(object sender, RoutedEventArgs e)
