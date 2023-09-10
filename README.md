@@ -317,7 +317,7 @@ La funzione <b><i>Generate()</i></b>, tramite ciclo <i>for</i>, si occuperà di 
 
 <details>
 <summary>Collatz</summary>
-Questa tab si occuperà di, una volta passato un numero al programma, ritornare il numero di passi necessare a raggiungere uno seguendo la <a href="https://it.wikipedia.org/wiki/Congettura_di_Collatz" target="_blank">congettura matematica di Lothar Collatz</a>. 
+Questa tab si occuperà di, una volta passato un numero al programma, ritornare il numero di passi necessare a raggiungere 1 seguendo la <a href="https://it.wikipedia.org/wiki/Congettura_di_Collatz" target="_blank">congettura matematica di Lothar Collatz</a>. 
 <br>
 <details>
 <summary>xaml</summary>
