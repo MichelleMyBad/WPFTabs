@@ -507,7 +507,7 @@ Partiamo come al solito col creare griglia e titolo per la nostra tab.
 </RichTextBox>
 ```
 
-Continuiamo con la solita <b><i><RichTextBox></i></b> per poter inserire la descrizione di ciò che la tab andrà a svolgere.
+Continuiamo con la solita <<b><i>RichTextBox</i></b>> per poter inserire la descrizione di ciò che la tab andrà a svolgere.
 <br><br>
 
 ```xaml
@@ -525,7 +525,7 @@ Continuiamo con la solita <b><i><RichTextBox></i></b> per poter inserire la desc
 </TabItem>
 ```
 
-Per poi concludere con uno <b><i><StackPanel></i></b> contenente pulsante, <b><i><TextBox></i></b> per l'input e <b><i><TextBlock></i></b> per mostrare l'ultima stringa inserita e il numero pulito all'utente.
+Per poi concludere con uno <<b><i>StackPanel</i></b>> contenente pulsante, <<b><i>TextBox</i></b>> per l'input e <<b><i>TextBlock</i></b>> per mostrare l'ultima stringa inserita e il numero pulito all'utente.
 <br>
 </details>
 
@@ -564,7 +564,7 @@ public string Pulisci(string phoneNumber)
 }
 ```
 
-Per cominciare creaiamo una funzione che si in grado di ripulire il nostro numero secondo gli standard del NANP americano e che poi ritorni il numero ripulito o un errore in caso di input errato.
+Per cominciare creaiamo una funzione che sia in grado di ripulire il nostro numero secondo gli standard del NANP americano, e che poi ritorni il numero ripulito o un errore in caso di input errato.
 <br><br>
 
 ```c#
@@ -583,7 +583,7 @@ private void Button_Click_3(object sender, RoutedEventArgs e)
     }
 }
 ```
-Continuiamo poi con l'immagazzinare la strinfa inserita all'interno di <b><i>numero</i></b>, per poi fornire questo dato alla <b><i><TextBox></i></b>, che si occupa di mostrare a schermo l'ultima stringa inserita, e a <b><i>Pulisci</i></b>, riusltato della quale verrà immagazzinato all'interno della <b><i><TextBox></i></b> in modo da mostrarlo a schermo. utilizziamo nuovamente un <i>try-catch</i> per prevenire il crash dell'applicazione in caso di errori.     
+Continuiamo poi con l'immagazzinare la stringa inserita all'interno di <b><i>numero</i></b>, per poi fornire questo dato alla <<b><i>TextBox</i></b>>, che si occupa di mostrare a schermo l'ultima stringa inserita, e a <b><i>Pulisci()</i></b>, riusltato della quale verrà immagazzinato all'interno del <<b><i>TextBlock</i></b>> in modo da mostrarlo a schermo. utilizziamo nuovamente un <i>try-catch</i> per prevenire il crash dell'applicazione in caso di errori.     
 </details>
 <br>
 </details>
