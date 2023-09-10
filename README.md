@@ -175,9 +175,9 @@ Proseguendo, nella seconda riga, troveremo il nostro pulsante incaricato del rio
 <details>
         <summary>Creazione della funzione chiamata al click</summary> 
         <img src="https://github.com/MichelleMyBad/WPFTabs/assets/127590227/8aaeef93-0382-4fdf-8eb0-98cd891cf58d"> <br>
-        Per creare una funzione associata al click del pulsante senza in modo semplice e veloce basterà fare doppio click su <b><i>Button</i></b> in questo modo,<br><br>
+        Per creare una funzione associata al click del pulsante in modo semplice e veloce basterà fare doppio click su <b><i>Button</i></b> in questo modo.<br><br>
         <img src="https://github.com/MichelleMyBad/WPFTabs/assets/127590227/aec673f7-3416-4124-9897-c9a0b581f051"> <br>
-        andare nelle <b>Properties</b> e accedere alla sezione <b>Event Handler</b> cliccando dove mostrato in immagine :<br><br>
+        Sarà poi necessario andare nelle <b>Properties</b> e accedere alla sezione <b>Event Handler</b> cliccando dove mostrato in immagine.<br><br>
         <img src="https://github.com/MichelleMyBad/WPFTabs/assets/127590227/3657050e-0cb0-4227-8536-34f2a7ef7933)"><br> 
         Fare poi doppio click nello spazio a fianco a <b>Click</b> e verrà generato automaticamente l'attributo <b><i>Click="NomeFunzione"</i></b> al bottone e una funzione omonima all'interno del file <b>MainWindow.xaml.cs</b>
 </details>
@@ -197,7 +197,7 @@ Proseguendo, nella seconda riga, troveremo il nostro pulsante incaricato del rio
 </RichTextBox>
 ```
 
-Nella terza riga ci occuperemo semplicemente di inserire due <b><i><RichTextBox></i></b> dove poter scrivere <i>"Sequenza generata"</i> e <i>"Sequenza riordinata"</i>, di modo da poterle differenziare più facilmente.
+Nella terza riga ci occuperemo semplicemente di inserire due <<b><i>RichTextBox</i></b>> dove poter scrivere <i>"Sequenza generata"</i> e <i>"Sequenza riordinata"</i>, di modo da permettere all'utente di differenziarle più facilmente.
 <br><br>
 
 ```xaml
@@ -207,7 +207,7 @@ Nella terza riga ci occuperemo semplicemente di inserire due <b><i><RichTextBox>
 </TabItem>
 ```
 
-Per finire nell'ultima riga inseriamo le due <b><i><ListView></i></b> all'interno delle quali andremo a mostrare a schermo i nostri vettori (generato e ordinato). Bisognerà inoltre dargli dei nomi, di modo da poterle andare a modificare tramite c#.
+Per finire nell'ultima riga inseriamo le due <<b><i>ListView</i></b>> all'interno delle quali andremo a mostrare a schermo i nostri vettori (generato e ordinato). Bisognerà inoltre dargli dei nomi, di modo da poterle andare a modificare tramite c#.
 <br>
 </details>
 
