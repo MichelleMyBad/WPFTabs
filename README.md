@@ -105,7 +105,7 @@ Per prima cosa sarà necessario crearae un <b><i><TabControl></i></b> per poter 
 <details>
 <summary>Bubble (sort)</summary>
 Questa tab si occuperà di generare un vettore randomico con numeri che vanno da 1 a 100, per poi riordinarlo tramite bubble sort.
-        
+<br>        
 <details>
 <summary>xaml</summary>
 
@@ -295,6 +295,7 @@ La funzione <b><i>Generate</i></b>, tramite ciclo <i>for</i>, si occuperà di ag
 <details>
 <summary>Collatz</summary>
 Questa tab si occuperà di, una volta passato un numero al programma, ritornare il numero di passi necessare a raggiungere uno seguendo la <a href="https://it.wikipedia.org/wiki/Congettura_di_Collatz" target="_blank">congettura matematica di Lothar Collatz</a>. 
+<br>
 <details>
 <summary>xaml</summary>
 
@@ -423,6 +424,7 @@ Al click del pulsante faremo invece in modo di ricavare il numero inserito dall'
 <details>
 <summary>Telefono</summary>
 Questa tab si occuperà di, in caso si tratti di un numero valido, pulire la stringa inserita dall'utente perchè sia valida ai fini del NAMP americano.
+<br>
 <details>
 <summary>xaml</summary>
 
@@ -567,7 +569,7 @@ Continuiamo poi con l'immagazzinare la strinfa inserita all'interno di <b><i>num
 <details>
 <summary>Acronimo</summary>
 Questa tab si occuperà di, una volta inserita una serie di parole, ricavarlne l'acronimo.
-        
+<br>       
 <details>
 <summary>xaml</summary>
 
@@ -681,7 +683,7 @@ Concludiamo con il solito <i>try-catch</i> nel quale ic occuperemo di prendere l
 <details>
 <summary>Isogramma</summary>
 Questa tab si occuperà di controllare se una parola o frase inserita è un isogramma (non presenta lettere ripetute).
-        
+<br>        
 <details>
 <summary>xaml</summary>
 
