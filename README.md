@@ -179,8 +179,10 @@ Nella terza riga ci occuperemo semplicemente di inserire due <b><i><RichTextBox>
 <br><br>
 
 ```xaml
-<ListView Grid.Row="3" Grid.Column="0" x:Name="LstUnsorted"></ListView>
-<ListView Grid.Row="3" Grid.Column="1" x:Name="LstSorted"></ListView>
+        <ListView Grid.Row="3" Grid.Column="0" x:Name="LstUnsorted"></ListView>
+        <ListView Grid.Row="3" Grid.Column="1" x:Name="LstSorted"></ListView>
+    </Grid>
+</TabItem>
 ```
 
 Per finire nell'ultima riga inseriamo le due <b><i><ListView></i></b> all'interno delle quali andremo a mostrare a schermo i nostri vettori (generato e ordinato). Bisognerà inoltre dargli dei nomi, di modo da poterle andare a modificare tramite c#.
@@ -288,15 +290,109 @@ La funzione <b><i>Generate</i></b>, tramite ciclo <i>for</i>, si occuperà di ag
 </details>
 
 
-<details>
-<summary>Collatz</summary>
 
 <details>
+<summary>Collatz</summary>
+Questa tab si occuperà di, una volta passato un numero al programma, ritornare il numero di passi necessare a raggiungere uno seguendo la [congettura matematica di Lothar Collatz](https://it.wikipedia.org/wiki/Congettura_di_Collatz) 
+<details>
 <summary>xaml</summary>
+
+```xaml
+<TabItem Header="Collatz">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+        </Grid.ColumnDefinitions>
+```
+
+Come visto per la tab precedente, cominciamo col creare una griglia per questa tab e col dargli un nome visibile a schermo.
+<br>
+
+```xaml
+<RichTextBox IsReadOnly="True">
+    <FlowDocument>
+        <Paragraph>
+            Tra i problemi irrisolti in matematica c’è una congettura (una affermazione che nei fatti sembra vera ma di cui nessuno riesce a dimostrarne la falsità) espressa per la prima volta nel 1937 da Lothar Collatz nella quale si afferma questo:
+            <LineBreak/>
+            - Prendi un numero intero positivo n.
+            <LineBreak/>
+            - Se n è pari, dividilo per 2.
+            <LineBreak/>
+            - Se n è dispari, moltiplicalo per 3 e aggiungigli 1 per ottenere 3n + 1.
+            <LineBreak/>
+            - Usa questo risultato ripetendo il processo all’infinito.
+            <LineBreak/>
+            - Indipendentemente dal numero con cui inizi, alla fine raggiungerai sempre 1.
+            <LineBreak/>
+            - Quello da stabilire qui è quanti passi servono per farlo!!
+            <LineBreak/>
+            <LineBreak/>
+            A proposito di questa congettura, il famoso matematico ungherese Paul Erdős disse: *«La matematica non è ancora pronta per problemi di questo tipo»* ed offrì 500 dollari per la sua soluzione[1].
+            <LineBreak/>
+            <LineBreak/>
+            Questo esercizio prevede di realizzare un programma che passato un intero N, torni il numero di passi necessari a raggiungere 1.
+            <LineBreak/>
+            <LineBreak/>
+            Riferimenti storici
+            https://it.wikipedia.org/wiki/Congettura_di_Collatz
+        </Paragraph>
+    </FlowDocument>
+</RichTextBox>
+```
+
+Continuiamo con una <b><i><RichTextBox></i></b> nella quale poter inserire la traccia dell'esercizio.
+<br>
+
+```xaml
+         <StackPanel Grid.Row="1">
+             <Button Click="Button_Click_1">Calcola passi</Button>
+             <TextBox x:Name="edtCollatz" HorizontalContentAlignment="Center">Inserire numero</TextBox>
+             <TextBlock>Numero di passi : </TextBlock>
+             <TextBlock x:Name="txtCollatz"></TextBlock>
+         </StackPanel>
+     </Grid>
+</TabItem>
+```
+
+Concludiamo la parte grafica creando uno <b><i><StackPanel></i></b> nel quale poter inserire un bottone, che si occuperà di chiamare la funzione per eseguire il calcolo, un <b><i><TextBlock></i></b> per permettere all'utente di inserire il numero, ed altri due per poter mostrare a schermo il risultato ottenuto.
 </details>
 
 <details>
 <summary>c#</summary>
+
+```c#
+public int Passi(int n)
+{
+    int counter = 0;
+    if (n <= 0)
+    {
+        throw new ArgumentException();
+    }
+
+    for (counter = 0; n > 1; counter++)
+    {
+        if (n % 2 == 0)
+        {
+            n = n / 2;
+        }
+        else if (n % 2 == 1)
+        {
+            n = (n * 3 + 1);
+        }
+    }
+    return counter;
+}
+```
+
+Iniziamo col definire la funzione che si occuperà di eseguire il calcolo, per prima cosa dobbiamo assicurarci che il numero di maggiore di 0, per poi iniziare a seguire passo passo le istruzioni dateci dalla [congettura di Collatz](https://it.wikipedia.org/wiki/Congettura_di_Collatz).
+
+
+        
 </details>
 <br>
 </details>
