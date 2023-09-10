@@ -676,7 +676,7 @@ public string Abbrevia(string phrase)
 }
 ```
 
-Creiamo una funzione in grado di prendere la prima lettera per nuova parola, riconoscendo se si trovi dopo uno spazio o altri tipi di punteggiatura. per poi ritornare l'acronimo ricavato. <br>
+Creiamo una funzione in grado di prendere la prima lettera di ogni parola inserita per poi ritornare l'acronimo ricavato. <br>
 N.B. Bisognerà ricordarsi di specificare al programma di ignorare i possibili genitivi sassoni.
 <br><br>
 
@@ -697,7 +697,7 @@ private void Button_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-Concludiamo con il solito <i>try-catch</i> nel quale ic occuperemo di prendere l'input dell'utente, passarlo alla funzione, mostrare l'acronimo ottenuto e avvisare l'utente in caso di errore.
+Concludiamo con il solito <i>try-catch</i> nel quale ci occuperemo di prendere l'input dell'utente, passarlo alla funzione, mostrare l'acronimo ottenuto o avvisare l'utente in caso di input errato.
 </details>
 <br>
 </details>
@@ -722,7 +722,7 @@ Questa tab si occuperà di controllare se una parola o frase inserita è un isog
             </Grid.ColumnDefinitions>
 ```
 
-Iniziamo con il creare nuovamente un titolo per quest'ultima tab e una griglia apposita. <br><br>
+Iniziamo con il creare nuovamente un titolo e una griglia apposita. <br><br>
 
 ```xaml
 <RichTextBox IsReadOnly="True" Grid.ColumnSpan="2">
@@ -767,7 +767,7 @@ Iniziamo con il creare nuovamente un titolo per quest'ultima tab e una griglia a
 </RichTextBox>
 ```
 
-Continuiamo con la <b><i><RichTextBox></i></b> per la descrizione.<br><br>
+Continuiamo con la <<b><i>RichTextBox</i></b>> per la descrizione.<br><br>
 
 
 ```xaml
@@ -780,7 +780,7 @@ Continuiamo con la <b><i><RichTextBox></i></b> per la descrizione.<br><br>
 </TabItem>
 ```
 
-Concludiamo in fine con uno <b><i><StackPanel></i></b> con al suo interno pulsante, <b><i><TextBox></i></b> per l'input e <b><i><TextBlock></i></b> per dire all'utente se la parola inserita è un isogramma o meno.
+In fine inseriamo uno <<b><i>StackPanel</i></b>> con al suo interno pulsante, <<b><i>TextBox</i></b>> per l'input e <<b><i>TextBlock</i></b>> per riferire all'utente se la parola inserita è un isogramma o meno.
 <br>
 </details>
 
@@ -804,7 +804,7 @@ public bool Verifica(string word)
 }
 ```
 
-Andiamo a creare una funzione in grado di poter verificare se la parola o frase proposta presentino o meno lettere ripetute e che, in caso contrario, ritorni <i>true</i>, in quanto la parola o frase passata è risulterà essere un isogramma.
+Creiamo una funzione in grado di poter verificare se la parola o frase proposta presentino o meno lettere ripetute e che, in caso contrario, ritorni <i>true</i>, dato che l'input proposto risulterà essere un isogramma.
 N.B. Sono permesse ripetizioni di caratteri diversi da lettere.
 <br><br>
 
@@ -825,7 +825,7 @@ private void Button_Click_4(object sender, RoutedEventArgs e)
 }
 ```
 
-Concludiamo con l'immagazzinare l'input dato dall'utente in una variabile, passarla alla funzione <b><i>Verifica</i></b> e poi mostrare all'utente se la parola o frase inserita sia un isogramma o meno.
+Facciamo poi in modo che al click del pulsante venga immagazzinato l'input dato dall'utente in una variabile, passiamo quest'ultima alla funzione <b><i>Verifica()</i></b> per poi mostrare all'utente se la parola o frase inserita sia un isogramma o meno.
 
 </details>
 
