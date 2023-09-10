@@ -359,7 +359,7 @@ Continuiamo con una <b><i><RichTextBox></i></b> nella quale poter inserire la tr
 </TabItem>
 ```
 
-Concludiamo la parte grafica creando uno <b><i><StackPanel></i></b> nel quale poter inserire un bottone, che si occuperà di chiamare la funzione per eseguire il calcolo, un <b><i><TextBlock></i></b> per permettere all'utente di inserire il numero, ed altri due per poter mostrare a schermo il risultato ottenuto.
+Concludiamo la parte grafica creando uno <b><i><StackPanel></i></b> nel quale poter inserire un bottone, che si occuperà di chiamare la funzione per eseguire il calcolo, un <b><i><TextBlock></i></b> per permettere all'utente di inserire il numero e due <b><i><TextBlock></i></b> per poter mostrare a schermo il risultato ottenuto.
 </details>
 
 <details>
@@ -498,7 +498,7 @@ Continuiamo con la solita <b><i><RichTextBox></i></b> per poter inserire la desc
 </TabItem>
 ```
 
-Per poi concludere con uno <b><i><StackPanel></i></b> contenente pulsante, <b><i><TextBlock></i></b> per l'input e per mostrare unltima stringa inserita e numero pulito all'utente.
+Per poi concludere con uno <b><i><StackPanel></i></b> contenente pulsante, <b><i><TextBox></i></b> per l'input e <b><i><TextBlock></i></b> per mostrare l'ultima stringa inserita e il numero pulito all'utente.
 </details>
 
 <details>
@@ -605,7 +605,7 @@ Per poi proseguire con la solita descrizione.
 </StackPanel>
 ```
 
-Concludiamo in fine con bottone e <b><i><TextBlock></i></b>.
+Concludiamo in fine con <b><i><StackPanel></i></b> contenente bottone, <b><i><TextBlock></i></b> e <b><i><TextBlock></i></b> per permettere all'utente di inserire l'input e visualizzare l'acronimo.
 
 </details>
 
@@ -677,13 +677,127 @@ Concludiamo con il solito <i>try-catch</i> nel quale ic occuperemo di prendere l
 
 <details>
 <summary>Isogramma</summary>
-
+Questa tab si occuperà di controllare se una parola o frase inserita è un isogramma (non presenta lettere ripetute).
+        
 <details>
 <summary>xaml</summary>
+
+```xaml
+<TabItem Header="Isogramma">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+```
+
+Iniziamo con il creare nuovamente un titolo per quest'ultima tab e una griglia apposita. <br>
+
+```xaml
+<RichTextBox IsReadOnly="True" Grid.ColumnSpan="2">
+        <FlowDocument>
+            <Paragraph>
+                Determina se una parola o una frase è un isogramma.
+                <LineBreak/>
+                <LineBreak/>
+                Per come lo intendiamo in questo esercizio, un isogramma è una parola o una frase che non ha lettere ripetute.
+                <LineBreak/>
+                Sono ammessi spazi e segni di punteggiatura ripetuti.
+                <LineBreak/>
+                <LineBreak/>
+                Esempi di isogrammi:
+                <LineBreak/>
+                <LineBreak/>
+                - lumberjacks
+                <LineBreak/>
+                - background
+                <LineBreak/>
+                - downstream
+                <LineBreak/>
+                - six-year-old
+                <LineBreak/>
+                <LineBreak/>
+                Gli isogrammi possono essere utili come chiavi di cifratura dato che la corrispondenza fra lettere è univoca.
+                <LineBreak/>
+                <LineBreak/>
+                Isogrammi di 10 lettere, per esempio PATHFINDER, DUMBWAITER o BLACKHORSE, possono essere utilizzate da venditori di beni il cui prezzo può essere negoziato, come macchine usate, gioielli e antichità.
+                <LineBreak/>
+                <LineBreak/>
+                Per esempio le cifre decimali possono essere mappate secondo questo schema:
+                <LineBreak/>
+                <LineBreak/>
+                P	A	T	H	F	I	N	D	E	R
+                <LineBreak/>
+                <LineBreak/>
+                1	2	3	4	5	6	7	8	9	0
+        
+            </Paragraph>
+        </FlowDocument>
+</RichTextBox>
+```
+
+Continuiamo con la <b><i><RichTextBox></i></b> per la descrizione.<br>
+
+
+```xaml
+            <StackPanel Grid.Row="1" Grid.ColumnSpan="2">
+                <Button  Grid.ColumnSpan="2" Click="Button_Click_4">Controlla</Button>
+                <TextBox HorizontalContentAlignment="Center" Grid.ColumnSpan="2" x:Name="edtIsogramma">Inserire parola</TextBox>
+                <TextBlock x:Name="txtIsogramma"></TextBlock>
+            </StackPanel>
+        </Grid>
+</TabItem>
+```
+
+Concludiamo in fine con uno <b><i><StackPanel></i></b> con al suo interno pulsante, <b><i><TextBox></i></b> per l'input e <b><i><TextBlock></i></b> per dire all'utente se la parola inserita è un isogramma o meno.
 </details>
 
 <details>
 <summary>c#</summary>
+
+```c#
+public bool Verifica(string word)
+{
+    for (int i = 0; i < word.Length - 1; i++)
+    {
+        for (int j = i + 1; j < word.Length; j++)
+        {
+            if (Char.IsSymbol(word[i])==false && Char.ToLower(word[i]) == Char.ToLower(word[j]))
+            {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+```
+
+Andiamo a creare una funzione in grado di poter verificare se la parola o frase proposta presentino o meno lettere ripetute e che, in caso contrario, ritorni <i>true</i>, in quanto la parola o frase passata è risulterà essere un isogramma.
+N.B. Sono permesse ripetizioni di caratteri diversi da lettere.
+<br>
+
+```c#
+private void Button_Click_4(object sender, RoutedEventArgs e)
+{
+    string testo = edtIsogramma.Text;
+    bool verificatore = Verifica(testo);
+
+    if (verificatore == false)
+    {
+        txtIsogramma.Text = "La stringa inserita non è un isogramma";
+    }
+    else
+    {
+        txtIsogramma.Text = "La stringa inserita è un isogramma";
+    }
+}
+```
+
+Concludiamo con l'immagazzinare l'input dato dall'utente in una variabile, passarla alla funzione <b><i>Verifica</i></b> e poi mostrare all'utente se la parola o frase inserita sia un isogramma o meno.
+
 </details>
 
 </details>
