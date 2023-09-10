@@ -633,7 +633,7 @@ Per poi proseguire con la solita descrizione.
 </StackPanel>
 ```
 
-Concludiamo in fine con <b><i><StackPanel></i></b> contenente bottone, <b><i><TextBlock></i></b> e <b><i><TextBlock></i></b> per permettere all'utente di inserire l'input e visualizzare l'acronimo.
+Concludiamo in fine con <<b><i>StackPanel</i></b>> contenente bottone, <<b><i>TextBlock</i></b>> permettere all'utente di inserire l'input e <<b><i>TextBlock</i></b>> per visualizzare l'acronimo ottenuto.
 <br>
 </details>
 
