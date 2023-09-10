@@ -335,7 +335,7 @@ Questa tab si occuperà di, una volta passato un numero al programma, ritornare 
         </Grid.ColumnDefinitions>
 ```
 
-Come visto per la tab precedente, cominciamo col creare una griglia per questa tab e col dargli un nome visibile a schermo.
+Come visto per la tab precedente, cominciamo col creare una griglia e col dargli un nome visibile a schermo.
 <br><br>
 
 ```xaml
@@ -370,7 +370,7 @@ Come visto per la tab precedente, cominciamo col creare una griglia per questa t
 </RichTextBox>
 ```
 
-Continuiamo con una <b><i><RichTextBox></i></b> nella quale poter inserire la traccia dell'esercizio.
+Continuiamo con una <<b><i>RichTextBox</i></b>> nella quale poter inserire la traccia dell'esercizio.
 <br><br>
 
 ```xaml
@@ -384,7 +384,7 @@ Continuiamo con una <b><i><RichTextBox></i></b> nella quale poter inserire la tr
 </TabItem>
 ```
 
-Concludiamo la parte grafica creando uno <b><i><StackPanel></i></b> nel quale poter inserire un bottone, che si occuperà di chiamare la funzione per eseguire il calcolo, un <b><i><TextBlock></i></b> per permettere all'utente di inserire il numero e due <b><i><TextBlock></i></b> per poter mostrare a schermo il risultato ottenuto.
+Concludiamo la parte grafica creando uno <<b><i>StackPanel</i></b>> nel quale poter inserire un bottone, che si occuperà di chiamare la funzione per eseguire il calcolo, un <<b><i>TextBlock</i></b>> per permettere all'utente di inserire un input e due <<b><i>TextBlock</i></b>> per poter mostrare a schermo il risultato ottenuto.
 <br>
 </details>
 
