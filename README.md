@@ -110,7 +110,8 @@ L'ultima cosa che rimane da fare è definire la nostra funzione <b><i>Stufa()</i
 </details>
 
 ## Tab
-Per prima cosa sarà necessario crearae un <b><i><TabControl></i></b> per poter contenere le diverse tab e posizionarlo nella prima righa della griglia contenente tutta l'applicazone, il quale verrà chiuso dopo aver inserito al suo interno tutti i diversi <b><i><TabItem></i></b>.
+Per poter creare le diverse tab, sarà innanzitutto necessario crearae un <<b><i>TabControl</i></b>> che le possa contenere e posizionarlo nella prima righa della griglia contenente tutta l'applicazone. 
+N.B. Il <<b><i>TabControl</i></b>> andrà chiuso solamente una volta inseriti tutti i diversi <<b><i>TabItem</i></b>>.
 
 ```xaml
 <TabControl Grid.Row="0">
