@@ -266,7 +266,7 @@ public void Sort()
     }
 }
 ```
-Nella fuinzione <b><i>Sort()</i></b> inzieremo subito con l'aggiornare la <<b><i>ListView</i></b>> che dovrà contenere la sequenza riordinata alla fine del bubble sort, assegnandole il vettore apposito. Utilizziamo poi un semplice bubble sort per occuparci del riordinamento e, al termine di ogni ciclo, aggiorniamo l'interfaccia grafica tramite <b><i>Dispatcher.Invoke</i></b>, mostrando così all'utente il riordinamento in modo progressivo.
+Nella fuinzione <b><i>Sort()</i></b> inzieremo subito con l'aggiornare la <<b><i>ListView</i></b>> che dovrà contenere la sequenza riordinata alla fine del riordinamento, assegnandole il vettore apposito. Utilizziamo poi un semplice bubble sort per occuparci del vettore e, al termine di ogni ciclo, aggiorniamo l'interfaccia grafica tramite <b><i>Dispatcher.Invoke</i></b>, mostrando così all'utente il riordinamento in modo progressivo.
 <br><br>
 
 ```c#
@@ -283,7 +283,7 @@ private void Button_Click_2(object sender, RoutedEventArgs e)
     }
 }
 ```
-Proseguiamo con l'iniziare la generazione e il riordinamento di un nuovo vettore al click del pulsante: per prima cosa controlliamo che entrambi i <b><i>Thread</i></b> si siano conclusi o, in caso del <b><i>thread2</i></b>, inizializzati. In caso si verifichino queste condizioni, inizializiamo il <b><i>thread2</i></b> di modo che esegua la funzione <b><i>Generate()</i></b>.
+Proseguiamo con l'iniziare la generazione e il riordinamento di un nuovo vettore al click del pulsante: per prima cosa controlliamo che entrambi i <b><i>Thread</i></b> si siano conclusi o, in caso del <b><i>thread2</i></b>, inizializzati. Nell'eventualità che si verifichino queste condizioni, inizializiamo il <b><i>thread2</i></b> di modo che esegua la funzione <b><i>Generate()</i></b>.
 <br><br>
 
 ```c#
@@ -306,7 +306,7 @@ public void Generate()
 }
 ```
 
-La funzione <b><i>Generate()</i></b>, tramite ciclo <i>for</i>, si occuperà di aggiornare le liste con una nuova sequenza di numeri casuali (da 1 a 100). Ad ogni passo del ciclo <i>for</i> andremo a fare refresh delle <<b><i>ListView</i></b>> tramite <b><i>Dispatcher.Invoke</i></b>, di modo da mostrare all'utente il progredire della rigenerazione dei numeri casuali. Infine avviamo nuovamente nel <b><i>thread1</i></b> la funzione <b><i>Sort()</i></b>.
+La funzione <b><i>Generate()</i></b>, tramite ciclo <i>for</i>, si occuperà di aggiornare le liste con una nuova sequenza di numeri casuali (da 1 a 100). Ad ogni passo del ciclo <i>for</i> andremo a fare refresh delle <<b><i>ListView</i></b>> tramite <b><i>Dispatcher.Invoke</i></b>, di modo da mostrare all'utente il progredire della rigenerazione dei numeri casuali. Infine avviamo nuovamente la funzione <b><i>Sort()</i></b> nel <b><i>thread1</i></b>.
         
 </details>
 <br>
