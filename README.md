@@ -563,7 +563,7 @@ Continuiamo poi con l'immagazzinare la strinfa inserita all'interno di <b><i>num
 
 <details>
 <summary>Acronimo</summary>
-questa tab si occuperà di, una volta inserita una serie di parole, ricavarlne l'acronimo.
+Questa tab si occuperà di, una volta inserita una serie di parole, ricavarlne l'acronimo.
         
 <details>
 <summary>xaml</summary>
@@ -581,7 +581,7 @@ questa tab si occuperà di, una volta inserita una serie di parole, ricavarlne l
 ```
 
 Creiamo come al solito la nostra griglia e titolo per la tab.
-<br>
+<br><br>
 
 ```xaml
 <RichTextBox IsReadOnly="True" Grid.ColumnSpan="2">
@@ -594,7 +594,7 @@ Creiamo come al solito la nostra griglia e titolo per la tab.
 ```
 
 Per poi proseguire con la solita descrizione.
-<br>
+<br><br>
 
 ```xaml
 <StackPanel Grid.Row="1" Grid.ColumnSpan="2">
@@ -650,7 +650,7 @@ public string Abbrevia(string phrase)
 
 Creiamo una funzione in grado di prendere la prima lettera per nuova parola, riconoscendo se si trovi dopo uno spazio o altri tipi di punteggiatura. per poi ritornare l'acronimo ricavato. <br>
 N.B. Bisognerà ricordarsi di specificare al programma di ignorare i possibili genitivi sassoni.
-<br>
+<br><br>
 
 ```c#
 private void Button_Click(object sender, RoutedEventArgs e)
