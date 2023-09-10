@@ -415,7 +415,7 @@ public int Passi(int n)
 }
 ```
 
-Iniziamo col definire la funzione che si occuperà di eseguire il calcolo, per prima cosa dobbiamo assicurarci che il numero in input sia maggiore di 0, seguiamo poi passo passo le istruzioni dateci dalla <a href="https://it.wikipedia.org/wiki/Congettura_di_Collatz" target="_blank">congettura di Collatz</a>. Facciamo in fine il return del numero di passi eseguiti.
+Iniziamo col definire la funzione che si occuperà di eseguire il calcolo: per prima cosa dobbiamo assicurarci che il numero in input sia maggiore di 0, seguiamo poi passo passo le istruzioni dateci dalla <a href="https://it.wikipedia.org/wiki/Congettura_di_Collatz" target="_blank">congettura di Collatz</a>. Facciamo in fine il return del numero di passi eseguiti.
 <br><br>
 
 ```c#
@@ -438,7 +438,7 @@ private void Button_Click_1(object sender, RoutedEventArgs e)
 }
 ```
 
-Al click del pulsante metteremo in <b><i>valore</i></b> il numero inserito dall'utente, e in <b><i>risultato</i></b> il numero di passi eseguiti, ottenuto tramite la funzione <b><i>Passi()</i></b>, inseriamo in fine questo risultato all'interno del <<b><i>TextBlock</i></b>> creato in precedenza. Per prevenire eventuali errori durante l'esecuzione, metteremo il tutto all'interno di un <i>try-catch</i>, in modo che, in caso di input indesiderato, l'applicazione faccia notare all'utente il suo errore tramite <b><i>MessageBox.Show()</i></b>.   
+Al click del pulsante metteremo in <b><i>valore</i></b> il numero inserito dall'utente, e in <b><i>risultato</i></b> il numero di passi eseguiti, ottenuto tramite la funzione <b><i>Passi()</i></b>. Inseriamo in fine questo risultato all'interno del <<b><i>TextBlock</i></b>> creato in precedenza. Per prevenire eventuali errori durante l'esecuzione, metteremo il tutto all'interno di un <i>try-catch</i>, in modo che, in caso di input indesiderato, l'applicazione faccia notare all'utente il suo errore tramite <b><i>MessageBox.Show()</i></b>.   
 </details>
 <br>
 </details>
