@@ -40,7 +40,7 @@ Il primo tag <b><i><</i></b><b><i>Grid</i></b><b><i>></i></b> andrà chiuso una 
 
 
 ## Footer
-Dopo aver creato la prima griglia, il prossimo componente da creare sarà il footer, comune per tutte le diverse tab; come prima cosa ne osserveremo la struttura grafica.
+Dopo aver creato la prima griglia, il prossimo componente da creare sarà il footer, comune per tutte le diverse tab.
 
 <details>
 <summary>xaml</summary>
