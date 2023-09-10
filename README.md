@@ -4,6 +4,27 @@
 #### Esercizio WPF in C# da 5 tab diverse (Bubble, Collatz, Telefono, Acronimo, Isogramma). Ogni tab avrà una sua funzione che verrà eseguita indipendentemente (anche a tab non aperta) e disporrà inoltre di una descrizione della propria funzione e di un footer contenente data e ora.
 
 
+
+## Applicazione
+Prima di tutto bisogna regolare la grandezza desiderata per la nostra applicazione e che, una volta avviata, si posizioni al centro dello schermo dell'utente.
+```xaml
+<Window x:Class="MartinezBianchi.Michelle._3i.wpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MartinezBianchi.Michelle._3i.wpf"
+        mc:Ignorable="d"
+        
+        Title="MartinezBianchi.Michelle.3i.wpf" 
+        Height="600" 
+        Width="600" 
+        WindowStartupLocation="CenterScreen"
+        >
+```
+
+Ciò sarà possibile andando a modificare <b><i>Height</i></b> e <b><i>Width</i></b> in caso quelli impostaati automaticamente non ci soddisfino. Per il posizionamento dell'applicazione bastera invece modificare l'attributo <b><i>WindowStartupLocation</i></b>. In aggiunta è possibile cambiare il titolo della propria app tramite l'attributo <b><i>Title</i></b>.
+<br>
 ## Griglia
 Per prima cosa bisognerà cerare una griglia che andrà a contenere tab e footer, di modo da non dover creare un footer identico per ogni tab e poter riutilizzare sempre lo stesso sempliccemente posizionandolo in basso.
         
