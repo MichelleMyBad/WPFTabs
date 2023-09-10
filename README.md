@@ -389,10 +389,30 @@ public int Passi(int n)
 }
 ```
 
-Iniziamo col definire la funzione che si occuperà di eseguire il calcolo, per prima cosa dobbiamo assicurarci che il numero di maggiore di 0, per poi iniziare a seguire passo passo le istruzioni dateci dalla [congettura di Collatz](https://it.wikipedia.org/wiki/Congettura_di_Collatz).
+Iniziamo col definire la funzione che si occuperà di eseguire il calcolo, per prima cosa dobbiamo assicurarci che il numero di maggiore di 0, per poi iniziare a seguire passo passo le istruzioni dateci dalla <a href="https://it.wikipedia.org/wiki/Congettura_di_Collatz" target="_blank">congettura di Collatz</a>, per poi fare il retunr del numero di passi eseguiti.
+<br>
 
+```c#
+private void Button_Click_1(object sender, RoutedEventArgs e)
+{
+    try
+    {
+        int valore = Convert.ToInt32(edtCollatz.Text);
+        int risultato = Passi(valore);
+        txtCollatz.Text= risultato.ToString();
+    }
+    catch(Exception) 
+    {
+        MessageBox.Show("Inserire un numero maggiore di 0 nella casella");
+    }
+    catch (Exception)
+    {
+        MessageBox.Show("Inserire un numero nella casella");
+    }
+}
+```
 
-        
+Al click del pulsante faremo invece in modo di ricavare il numero inserito dall'utente, mettere in <b><i>risultato</i></b> il numero di passi eseguiti, ottenuto tramite la funzione <b><i>Passi</i></b>, ed infine inseriremo questo risultato all'interno del <b><i><TextBlock></i></b> creato in precedenza. Per prevenire eventuali errori durante l'esecuzione, metteremo il tutto all'interno di un <i>try-catch</i>, in modo che, in caso di input indesiderato, l'applicazione faccia notare all'utente il suo errore tramite <b><i>MessageBox.Show</i></b>.   
 </details>
 <br>
 </details>
@@ -400,13 +420,142 @@ Iniziamo col definire la funzione che si occuperà di eseguire il calcolo, per p
 
 <details>
 <summary>Telefono</summary>
-
+Questa tab si occuperà di, in caso si tratti di un numero valido, pulire la stringa inserita dall'utente perchè sia valida ai fini del NAMP americano.
 <details>
 <summary>xaml</summary>
+
+```xaml
+<TabItem Header="Telefono">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+```
+
+Partiamo come al solito col creare griglia e titolo per la nostra tab.
+<br>
+
+```xaml
+<RichTextBox IsReadOnly="True" Grid.ColumnSpan="2">
+    <FlowDocument>
+        <Paragraph>
+            Pulire la stringa in ingresso perchè sia valida ai fini del NAMP Americano.
+            <LineBreak/>
+            <LineBreak/>
+            Il North American Numbering Plan (NANP) è un sistema di numerazione telefonica utilizzato da molti paesi del Nord America come gli Stati Uniti, il Canada o le Bermuda.
+            <LineBreak/>
+            <LineBreak/>
+            Tutti i paesi NANP condividono lo stesso prefisso internazionale: 1.
+            <LineBreak/>
+            <LineBreak/>
+            I numeri NANP sono numeri di dieci cifre costituiti da
+            <LineBreak/>
+            - un codice di area a tre cifre, comunemente noto come prefisso,
+            <LineBreak/>
+            - seguito da un numero locale di sette cifre.
+            <LineBreak/>
+            - Le prime tre cifre del numero locale rappresentano il codice di scambio,
+            <LineBreak/>
+            - seguito dal numero univoco di quattro cifre *(che è il numero dell'abbonato)*.
+            <LineBreak/>
+            <LineBreak/>
+            Il formato è generalmente rappresentato come
+            <LineBreak/>
+            <LineBreak/>
+            (NXX) -NXX-XXXX
+            <LineBreak/>
+            <LineBreak/>
+            dove
+            <LineBreak/>
+            - N è qualsiasi cifra compresa tra 2 e 9
+            <LineBreak/>
+            - X è qualsiasi cifra compresa tra 0 e 9
+        </Paragraph>
+    </FlowDocument>
+</RichTextBox>
+```
+
+Continuiamo con la solita <b><i><RichTextBox></i></b> per poter inserire la descrizione di ciò che la tab andrà a svolgere.
+<br>
+
+```xaml
+                <StackPanel Grid.Row="1" Grid.ColumnSpan="2">
+                        <Button Click="Button_Click_3" Grid.ColumnSpan="2">Pulisci numero</Button>
+                        <TextBox HorizontalContentAlignment="Center" x:Name="edtTelefono" Grid.ColumnSpan="2">Inserire numero</TextBox>
+                        <!--colonna 0-->
+                        <TextBlock Grid.Column="0">Ultimo numero pulito :</TextBlock>
+                        <TextBlock x:Name="txtTelefono" Grid.Column="0"></TextBlock>
+                        <!--colonna 1-->
+                        <TextBlock Grid.Column="1">Ultima stringa inserita :</TextBlock>
+                        <TextBlock x:Name="txtstrTelefono" Grid.Column="1"></TextBlock>
+                </StackPanel>
+        </Grid>
+</TabItem>
+```
+
+Per poi concludere con uno <b><i><StackPanel></i></b> contenente pulsante, <b><i><TextBlock></i></b> per l'input e per mostrare unltima stringa inserita e numero pulito all'utente.
 </details>
 
 <details>
 <summary>c#</summary>
+
+```c#
+public string Pulisci(string phoneNumber)
+{
+    for (int i = 0; i < phoneNumber.Length; i++)
+    {
+
+        if (char.IsDigit(phoneNumber[i]) == false)
+        {
+            phoneNumber = phoneNumber.Remove(i, 1);
+            i--;
+        }
+    }
+    if (phoneNumber[0] == '1')
+    {
+        phoneNumber = phoneNumber.Remove(0, 1);
+    }
+    if (phoneNumber.Length != 10)
+    {
+        throw new ArgumentException();
+    }
+    else if (Convert.ToInt32(phoneNumber[0].ToString()) < 2 || Convert.ToInt32(phoneNumber[3].ToString()) < 2)
+    {
+        throw new ArgumentException();
+    }
+    else
+    {
+        return phoneNumber;
+    }
+
+}
+```
+
+Per cominciare creaiamo una funzione che si in grado di ripulire il nostro numero secondo gli standard del NANP americano e che poi ritorni il numero ripulito o un errore in caso di input errato.
+<br>
+
+```c#
+private void Button_Click_3(object sender, RoutedEventArgs e)
+{
+    try
+    {
+        string numero = edtTelefono.Text;
+        txtstrTelefono.Text = numero;
+        string numeroPulito = Pulisci(numero);
+        txtTelefono.Text = numeroPulito;
+    }
+    catch(Exception)
+    {
+        MessageBox.Show("Inserire un numero valido nella casella");
+    }
+}
+```
+Continuiamo poi con l'immagazzinare la strinfa inserita all'interno di <b><i>numero</i></b>, per poi fornire questo dato alla <b><i><TextBox></i></b>, che si occupa di mostrare a schermo l'ultima stringa inserita, e a <b><i>Pulisci</i></b>, riusltato della quale verrà immagazzinato all'interno della <b><i><TextBox></i></b> in modo da mostrarlo a schermo. utilizziamo nuovamente un <i>try-catch</i> per prevenire il crash dell'applicazione in caso di errori.     
 </details>
 <br>
 </details>
@@ -414,13 +563,113 @@ Iniziamo col definire la funzione che si occuperà di eseguire il calcolo, per p
 
 <details>
 <summary>Acronimo</summary>
-
+questa tab si occuperà di, una volta inserita una serie di parole, ricavarlne l'acronimo.
+        
 <details>
 <summary>xaml</summary>
+
+```xaml
+<TabItem Header="Acronimo">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+```
+
+Creiamo come al solito la nostra griglia e titolo per la tab.
+<br>
+
+```xaml
+<RichTextBox IsReadOnly="True" Grid.ColumnSpan="2">
+        <FlowDocument>
+            <Paragraph>
+                Dato un insieme di parole al programma esso sarà in grado di crearne l'acronimo
+            </Paragraph>
+        </FlowDocument>
+</RichTextBox>
+```
+
+Per poi proseguire con la solita descrizione.
+<br>
+
+```xaml
+<StackPanel Grid.Row="1" Grid.ColumnSpan="2">
+        <Button  Grid.ColumnSpan="2" Click="Button_Click">Ottieni acronimo</Button>
+        <TextBox HorizontalContentAlignment="Center" x:Name="edtAcronimo" Grid.ColumnSpan="2">Inserire acronimo</TextBox>
+        <TextBlock>Acronimo : </TextBlock>
+        <TextBlock x:Name="txtAcronimo"></TextBlock>
+</StackPanel>
+```
+
+Concludiamo in fine con bottone e <b><i><TextBlock></i></b>.
+
 </details>
 
 <details>
 <summary>c#</summary>
+
+```c#
+public string Abbrevia(string phrase)
+{
+    string acronimo = "";
+
+    if (char.IsLetter(phrase[0]))
+    {
+        acronimo = phrase[0].ToString().ToUpper();
+    }
+    while (char.IsLetter(phrase[phrase.Length - 1]) == false) 
+    {
+        phrase=phrase.Substring(0, phrase.Length - 1);
+    }
+    int lunghezza = phrase.Length;
+    for (int i = 0; i < lunghezza; i++)
+    {
+        if (phrase[i].ToString() == "'" && (phrase[i + 1].ToString() != "s" && phrase[i + 1].ToString() != "S"))
+        {
+            if (char.IsLetter(phrase[i + 1]))
+            {
+                acronimo = acronimo + phrase[i + 1].ToString().ToUpper();
+            }
+
+        }
+        else if(char.IsLetter(phrase[i]) == false && phrase[i].ToString() != "'")
+        {
+            if (char.IsLetter(phrase[i + 1]))
+            {
+                acronimo = acronimo + phrase[i + 1].ToString().ToUpper();
+            }
+        }
+    }
+    return acronimo;
+}
+```
+
+Creiamo una funzione in grado di prendere la prima lettera per nuova parola, riconoscendo se si trovi dopo uno spazio o altri tipi di punteggiatura. per poi ritornare l'acronimo ricavato. <br>
+N.B. Bisognerà ricordarsi di specificare al programma di ignorare i possibili genitivi sassoni.
+<br>
+
+```c#
+private void Button_Click(object sender, RoutedEventArgs e)
+{
+    try
+    {
+        string frase = edtAcronimo.Text;
+        string acronimo = Abbrevia(frase);
+        txtAcronimo.Text = acronimo;
+    }
+    catch(Exception)
+    {
+        MessageBox.Show("Inserire delle parole nella casella");
+    }
+
+}
+```
+
+Concludiamo con il solito <i>try-catch</i> nel quale ic occuperemo di prendere l'input dell'utente, passarlo alla funzione, mostrare l'acronimo ottenuto e avvisare l'utente in caso di errore.
 </details>
 <br>
 </details>
