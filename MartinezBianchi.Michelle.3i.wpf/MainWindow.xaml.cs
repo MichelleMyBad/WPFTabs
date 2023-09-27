@@ -17,7 +17,7 @@ using System.Threading;
 namespace MartinezBianchi.Michelle._3i.wpf
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for MainWindow.xaml .
     /// </summary>
     public partial class MainWindow : Window
     {
